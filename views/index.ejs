@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<% include header.html %>
+<script>
+$(document).ready(function(){
+	$('.mainBody').addClass('w3-border w3-round w3-white w3-container w3-margin w3-padding-16 w3-responsive');
+	$.get('/list',function(r){
+		$('#listView').html(r);
+	});
+});
+</script>
+</head>
+<body class='w3-light-gray'>
+<% include pageHeader.html %>
+<article class='w3-container w3-padding-16'>
+ <p class='w3-hide'id='volumeCon'>0.5</p>
+ <section class='w3-left mainBody w3-col l7 m6 s5'id='listView'>
+ 
+ </section>
+ <section class='w3-right mainBody w3-col l4 m4 s4'id='detailView'>
+ 
+ </section>
+</article>
+</body>
+</html>

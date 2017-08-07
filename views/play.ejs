@@ -1,0 +1,14 @@
+<script src='/js/play.js'></script>
+ <input type='hidden'name='id'id='_id'value='<%= item._id %>'>
+ <section class='header'>
+  <h2 class='w3-center'><b><%= item.strMusic %></b></h2>
+  <h6 class='w3-right'>-<%= item.strArtist %></h6>
+ </section>
+ <audio id='musicPlayer' autoplay controls>
+  <source src='/audio/<%= item.strFileName %>'type='audio/mpeg'>
+  Your browser does not support the audio element.
+ </audio>
+ <section class='buttons w3-container w3-padding-16 w3-right'>
+  <button type='button'id='deleteBtn'class='w3-hover-red w3-deep-orange'>Delete</button>
+  <button type='button'id='updateBtn'class='w3-hover-blue w3-cyan'>Edit</button>
+ </section>

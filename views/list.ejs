@@ -1,0 +1,22 @@
+<script src='/js/list.js'></script>
+ <table class='w3-table-all w3-hoverable'>
+  <tr class='w3-blue'>
+   <th><input type='checkbox'class='tAllSelect'></th>
+   <th>No</th>
+   <th>Music</th>
+   <th>Artist</th>
+   <th>Date Created</th>
+  </tr>
+  <% list.forEach(function(item,index){ %> 
+   <tr class='tList'id='<%= item._id %>'>
+   	<td class='noPlay'><input type='checkbox'class='tSelect'value='<%= item._id %>'name='shuffleList'></td>
+    <td><%= list.length-index %></td>
+    <td><%= item.strMusic %></td>
+    <td><%= item.strArtist %></td>
+    <td class='date'id='<%= item.dateCreated %>'></td>
+   </tr>
+  <% }) %>
+ </table>
+ <br>
+ <button type='button'class='w3-pink w3-hover-purple w3-left' id='shuffleBtn'>Shuffle</button>
+ <button type='button'class='w3-blue w3-hover-indigo w3-right'id='newBtn'>Write New</button>

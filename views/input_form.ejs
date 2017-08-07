@@ -1,0 +1,33 @@
+<script src='/js/input_form.js'></script>
+ <section class='mainBody input_container'>
+  <form>
+   <input type='hidden'id='id'name='id'value='<%= item._id %>'>
+   <section>
+    <label><b>Music Name:</b></label>
+    <input type='text'id='strMusic'name='strMusic'value='<%= item.strMusic %>'>
+    <p class='w3-text-red'><b class='strMusic-Error'></b></p>
+   </section>
+   <section>
+    <label><b>Artist:</b></label>
+    <input type='text'id='strArtist'name='strArtist'value='<%= item.strArtist %>'>
+    <p class='w3-text-red'><b class='strArtist-Error'></b></p>
+   </section>
+   <section>
+    <label><b>Music File</b></label>
+    <input type='file'id='strFileName'name='strFileName'accept='.mp3'>
+    <p class='w3-text-red'><b class='strFileName-Error'></b></p>
+    <p class='w3-text-green'><b class='strFileName-Success'></b></p>
+    <% if(item._id){ %>
+     <h5><b>Original File</b> : <%= item.strFileName.substring(item.strFileName.indexOf('_')+1) %></h5>
+	 <audio id='originalPlayer' controls>
+	  <source src='/audio/<%= item.strFileName %>'type='audio/mpeg'>
+	  Your browser does not support the audio element.
+	 </audio>
+    <% } %>
+   </section>
+  </form>
+ </section>
+ <section class='mainBody button_container w3-right'>
+  <button type='button'id='cancelBtn'class='w3-yellow w3-hover-amber'>Cancel</button>
+  <button type='button'id='submitBtn'class='w3-green w3-hover-teal'><%= item._id ? 'Update' : 'Save' %></button>
+ </section>
